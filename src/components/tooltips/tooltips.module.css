@@ -1,0 +1,35 @@
+.tooltips {
+  position: relative;
+}
+
+.popup[data-show="false"] {
+  height: 0;
+  border-color: transparent;
+}
+
+.popup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: var(--bg-col);
+  right: 0;
+  top: 110%;
+  overflow: hidden;
+  height: 8rem;
+  transition: 0.3s height ease-in-out;
+  border-radius: 0.25em;
+  border: 1px solid brown;
+  z-index: 10;
+}
+
+.popup button {
+  background-color: transparent;
+  color: var(--text-col);
+  width: 9rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5em;
+}

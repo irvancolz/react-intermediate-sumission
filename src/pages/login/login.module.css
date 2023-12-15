@@ -1,0 +1,25 @@
+.password_container {
+  position: relative;
+  width: fit-content;
+  height: 2.8em;
+  margin-bottom: 2rem;
+}
+
+.container {
+  margin-top: 1rem;
+}
+
+.toggle_icon {
+  position: absolute;
+  right: 1em;
+  top: 50%;
+  translate: 0 -50%;
+  background-color: transparent;
+  height: 2em;
+  outline-color: none;
+  border: none;
+}
+
+[type="submit"] {
+  margin-bottom: 1rem;
+}

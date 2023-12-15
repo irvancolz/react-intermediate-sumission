@@ -1,0 +1,44 @@
+.form_group {
+  position: relative;
+  margin-bottom: 2em;
+}
+
+.form_group > * {
+  display: block;
+}
+
+.form_group > label {
+  position: absolute;
+  left: calc(0.5rem + 2px);
+  top: 50%;
+  translate: 0 calc(-50% - 0.05em);
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+  font-size: 1.5em;
+}
+
+.form_group:focus-within > label,
+.form_group:has(:not(:placeholder-shown)) label {
+  top: -1em;
+  font-size: 1em;
+}
+
+.form_group:has(:placeholder-shown) label {
+  top: 50%;
+}
+
+.form_group > input {
+  width: 90vw;
+  font-size: 1.4em;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid brown;
+  background-color: transparent;
+  color: var(--text-col);
+}
+
+@media (min-width: 26em) {
+  .form_group > input {
+    width: 15em;
+  }
+}

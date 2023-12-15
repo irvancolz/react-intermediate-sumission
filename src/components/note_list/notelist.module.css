@@ -1,0 +1,8 @@
+.notes_container {
+  margin-top: 1em;
+  padding: 1em;
+  display: grid;
+  min-height: 15em;
+  grid-template-columns: repeat(auto-fit, 20em);
+  gap: 1em;
+}

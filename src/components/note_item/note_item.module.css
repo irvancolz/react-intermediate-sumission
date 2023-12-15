@@ -1,0 +1,39 @@
+.container {
+  padding: 1em;
+  border-radius: 4px;
+  border: 1px solid red;
+  max-width: 20em;
+  width: 20em;
+  height: 13em;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.title {
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  height: 2em;
+}
+
+.body {
+  font-style: italic;
+  font-size: 0.8em;
+  height: 3em;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+}
+
+.tools button:first-child {
+  margin-right: 1em;
+}
+
+.overflow_handler {
+  display: block;
+  display: -webkit-box;
+
+  -webkit-box-orient: vertical;
+  line-height: 1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

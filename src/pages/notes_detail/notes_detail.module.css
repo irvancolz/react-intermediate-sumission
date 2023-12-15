@@ -1,0 +1,13 @@
+.container {
+  min-height: 50vh;
+  display: grid;
+  place-items: center;
+}
+
+button:last-child {
+  margin: 0 0 0 1rem;
+}
+
+.tools {
+  margin-bottom: 1rem;
+}
