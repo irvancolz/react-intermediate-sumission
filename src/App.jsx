@@ -1,4 +1,4 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import "./App.css";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import { getAccessToken } from "./utils/http";
@@ -20,9 +20,11 @@ function App() {
 
   const token = getAccessToken();
 
-  if (!token && pathname != "/register") {
-    navigate("/login");
-  }
+  useEffect(() => {
+    if (!token && pathname != "/register") {
+      navigate("/login");
+    }
+  }, [pathname]);
 
   return (
     <div className="main" data-theme={theme}>
