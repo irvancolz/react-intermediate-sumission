@@ -24,7 +24,7 @@ function App() {
     if (!token && pathname != "/register") {
       navigate("/login");
     }
-  }, []);
+  });
 
   return (
     <div className="main" data-theme={theme}>
