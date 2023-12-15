@@ -9,6 +9,7 @@ import { IoLanguageOutline, IoExitOutline } from "react-icons/io5";
 import { useLanguage } from "../../context/language";
 import { LANGUAGES } from "../../utils/lang";
 import { useNavigate } from "react-router-dom";
+import { getAccessToken } from "../../utils/http";
 
 export default function Tooltips() {
   const { theme, toggleTheme } = useTheme();
@@ -21,6 +22,8 @@ export default function Tooltips() {
     localStorage.removeItem("accessToken");
     navigate("/login");
   }
+
+  const token = getAccessToken();
 
   return (
     <li className={style.tooltips}>
@@ -41,12 +44,14 @@ export default function Tooltips() {
               <IoLanguageOutline />
             </Button>
           </li>
-          <li>
-            <Button onClick={logout}>
-              {LANGUAGES[lang].button.logout}
-              <IoExitOutline />
-            </Button>
-          </li>
+          {token && (
+            <li>
+              <Button onClick={logout}>
+                {LANGUAGES[lang].button.logout}
+                <IoExitOutline />
+              </Button>
+            </li>
+          )}
         </ul>
       </div>
     </li>
