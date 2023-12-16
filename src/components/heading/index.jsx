@@ -16,9 +16,8 @@ export default function Heading() {
     setUsername(() => req.data.name);
   }
 
+  const token = getAccessToken();
   useEffect(() => {
-    const token = getAccessToken();
-
     if (token) {
       getCurrentUser();
     }
@@ -29,13 +28,17 @@ export default function Heading() {
       <h1 className={style.title}>{LANGUAGES[lang].hint.appName}</h1>
       <nav>
         <ul className={style.nav}>
-          <li className={style.link}>
-            <Link to={"/"}>{LANGUAGES[lang].links.home}</Link>
-          </li>
+          {token && (
+            <>
+              <li className={style.link}>
+                <Link to={"/"}>{LANGUAGES[lang].links.home}</Link>
+              </li>
 
-          <li className={style.link}>
-            <Link to={"/notes/add"}>{LANGUAGES[lang].links.add}</Link>
-          </li>
+              <li className={style.link}>
+                <Link to={"/notes/add"}>{LANGUAGES[lang].links.add}</Link>
+              </li>
+            </>
+          )}
 
           <li className={style.link} title={username}>
             {username}
