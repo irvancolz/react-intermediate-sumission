@@ -24,6 +24,7 @@ function App() {
     if (!token && pathname != "/register") {
       navigate("/login");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   return (
