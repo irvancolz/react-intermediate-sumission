@@ -28,6 +28,7 @@ export const LANGUAGES = {
       login: "masuk",
       register: "daftar",
       logout: "keluar",
+      search: "Cari",
     },
     form: {
       email: "Email",
@@ -67,6 +68,7 @@ export const LANGUAGES = {
       login: "Login",
       register: "Register",
       logout: "Logout",
+      search: "Search",
     },
     form: {
       email: "Email",

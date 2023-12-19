@@ -9,3 +9,16 @@ export function useInputValue() {
 
   return [value, handleValueChange];
 }
+
+export async function filterNotes(endpoint, keyword) {
+  const resp = await endpoint();
+
+  if (keyword) {
+    const filtered = resp.data.filter((i) => {
+      return i.title.toLowerCase().includes(keyword.toLocaleLowerCase());
+    });
+    return filtered;
+  }
+
+  return resp.data;
+}

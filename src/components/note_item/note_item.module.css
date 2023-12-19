@@ -28,6 +28,10 @@
   margin-right: 1em;
 }
 
+.tools {
+  display: flex;
+}
+
 .overflow_handler {
   display: block;
   display: -webkit-box;

@@ -1,6 +1,12 @@
 import { Suspense, lazy, useEffect } from "react";
 import "./App.css";
-import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import {
+  Navigate,
+  Route,
+  Routes,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import { getAccessToken } from "./utils/http";
 import Heading from "./components/heading";
 import { useTheme } from "./context/theme";
@@ -33,7 +39,8 @@ function App() {
       <main>
         <Suspense>
           <Routes>
-            <Route path={"/"} element={<HomePage />} />
+            <Route path={"/home"} element={<HomePage />} />
+            <Route path={"/"} element={<Navigate to={"/home"} />} />
             <Route path={"/notes/add"} element={<AddNotesPage />} />
             <Route path={"/notes/:id"} element={<NotesDetailPage />} />
             <Route path={"/login"} element={<LoginPage />} />
